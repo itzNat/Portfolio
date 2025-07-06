@@ -219,6 +219,7 @@
     }
 
     .contact-input {
+      padding: 0.5rem;
       transition: all 0.3s ease;
     }
 
@@ -324,6 +325,7 @@
         linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
       background-size: 30px 30px;
+      background-attachment: fixed;
     }
 
     .dark .grid-pattern {
