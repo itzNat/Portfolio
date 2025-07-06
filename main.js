@@ -106,7 +106,7 @@ createParticles();
 // Animate elements when they come into view
 const animateOnScroll = () => {
   const elements = document.querySelectorAll(
-    ".card-hover, .feature-card, .skill-badge, .project-card, .timeline-item"
+    ".fadeIn"
   );
 
   elements.forEach((element) => {
@@ -116,6 +116,9 @@ const animateOnScroll = () => {
     if (elementPosition < screenPosition) {
       element.style.opacity = "1";
       element.style.transform = "translateY(0)";
+    } else {
+      element.style.opacity = "0";
+      element.style.transform = "translateY(20px)";
     }
   });
 };
@@ -123,7 +126,7 @@ const animateOnScroll = () => {
 // Set initial state for animation
 document
   .querySelectorAll(
-    ".card-hover, .feature-card, .skill-badge, .project-card, .timeline-item"
+    ".fadeIn"
   )
   .forEach((el) => {
     el.style.opacity = "0";
@@ -145,15 +148,17 @@ if (typewriter) {
   });
 }
 
-function sendToWhatsApp(event) {
-  event.preventDefault();
+const sendBtn = document.getElementById("sendBtn");
+const whatsappForm = document.getElementById("whatsappForm");
+sendBtn.addEventListener('submit', e=>{
+  e.preventDefault();
 
   const phoneNumber = "2349086117194";
-  const firstName = document.getElementById("first-name").value;
-  const lastName = document.getElementById("last-name").value;
-  const email = document.getElementById("email").value;
-  const subject = document.getElementById("subject").value;
-  const message = document.getElementById("message").value;
+  const firstName = whatsappForm.value;
+  const lastName = whatsappForm.value;
+  const email = whatsappForm.value;
+  const subject = whatsappForm.value;
+  const message = whatsappForm.value;
 
   const fullMessage = `New Contact Form Submission:
     Name: ${firstName} ${lastName}
@@ -169,4 +174,4 @@ function sendToWhatsApp(event) {
   alert(
     "Thank you! Your message has been sent. You'll be redirected to WhatsApp."
   );
-}
+})
