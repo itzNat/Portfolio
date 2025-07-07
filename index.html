@@ -25,8 +25,6 @@
             }
           },
           animation: {
-            'float': 'float 6s ease-in-out infinite',
-            'float-reverse': 'float-reverse 5s ease-in-out infinite',
             'pulse-slow': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             'spin-slow': 'spin 10s linear infinite',
             'wave': 'wave 8s linear infinite',
@@ -37,14 +35,6 @@
             'neon': 'neon 1.5s ease-in-out infinite alternate'
           },
           keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-20px)' },
-            },
-            'float-reverse': {
-              '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(20px)' },
-            },
             wave: {
               '0%': { transform: 'rotate(0deg)' },
               '100%': { transform: 'rotate(360deg)' },
@@ -280,11 +270,11 @@
             </div>
           </div>
           <div class="mt-8 grid grid-cols-2 gap-4">
-            <div class="card-glass rounded-2xl p-4 text-center">
+            <div class="fadeIn card-glass rounded-2xl p-4 text-center">
               <div class="text-3xl font-bold text-primary-light dark:text-primary-dark">2+</div>
               <div class="text-gray-500 dark:text-gray-400">Years Experience</div>
             </div>
-            <div class="card-glass rounded-2xl p-4 text-center">
+            <div class="fadeIn card-glass rounded-2xl p-4 text-center">
               <div class="text-3xl font-bold text-primary-light dark:text-primary-dark">15+</div>
               <div class="text-gray-500 dark:text-gray-400">Projects Completed</div>
             </div>
@@ -572,7 +562,7 @@
   <!-- Contact Section -->
   <section id="contact" class="py-20 bg-gray-50 dark:bg-dark-900 grid-pattern">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
+      <div class="fadeIn text-center">
         <h2 class="text-3xl font-extrabold sm:text-4xl heading-font">
           <span class="gradient-text">Get In Touch</span>
         </h2>
@@ -583,12 +573,12 @@
 
       <div class="mt-16 lg:grid lg:grid-cols-12 lg:gap-8">
         <div class="lg:col-span-5">
-          <div class="card-glass rounded-2xl p-8">
+          <div class=fadeIn card-glass rounded-2xl p-8">
             <h3 class="text-2xl text-center font-bold heading-font">Contact Information</h3>
             <div class="mt-6 space-y-6">
               <div class="flex items-start">
                 <div
-                  class="flex-shrink-0 w-10 h-10 rounded-full bg-primary-light dark:bg-primary-dark bg-opacity-10 text-primary-light dark:text-primary-dark flex items-center justify-center">
+                  class="flex-shrink-0 w-10 h-10 rounded-full bg-primary-light bg-opacity-10 text-primary-light dark:text-primary-dark flex items-center justify-center">
                   <i class="fas fa-envelope"></i>
                 </div>
                 <div class="ml-4">
@@ -599,7 +589,7 @@
 
               <div class="flex items-start">
                 <div
-                  class="flex-shrink-0 w-10 h-10 rounded-full bg-primary-light dark:bg-primary-dark bg-opacity-10 text-primary-light dark:text-primary-dark flex items-center justify-center">
+                  class="flex-shrink-0 w-10 h-10 rounded-full bg-primary-light bg-opacity-10 text-primary-light dark:text-primary-dark flex items-center justify-center">
                   <i class="fas fa-phone-alt"></i>
                 </div>
                 <div class="ml-4">
@@ -610,7 +600,7 @@
 
               <div class="flex items-start">
                 <div
-                  class="flex-shrink-0 w-10 h-10 rounded-full bg-primary-light dark:bg-primary-dark bg-opacity-10 text-primary-light dark:text-primary-dark flex items-center justify-center">
+                  class="flex-shrink-0 w-10 h-10 rounded-full bg-primary-light bg-opacity-10 text-primary-light dark:text-primary-dark flex items-center justify-center">
                   <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <div class="ml-4">
@@ -641,20 +631,20 @@
         </div>
 
         <div class="mt-12 lg:mt-0 lg:col-span-7">
-          <div class="card-glass rounded-2xl p-8">
+          <div class="fadeIn card-glass rounded-2xl p-8">
             <h3 class="text-2xl font-bold heading-font">Send Me a Message</h3>
             <form id="whatsappForm" class="mt-6 space-y-6" onsubmit="sendToWhatsApp(event)">
               <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
                   <label for="first-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">First
                     Name</label>
-                  <input type="text" name="first-name" id="first-name" required
+                  <input type="text" name="firstName" id="first-name" required
                     class="contact-input input-glass w-full">
                 </div>
                 <div>
                   <label for="last-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Last
                     Name</label>
-                  <input type="text" name="last-name" id="last-name" required class="contact-input input-glass w-full">
+                  <input type="text" name="lastName" id="last-name" required class="contact-input input-glass w-full">
                 </div>
               </div>
 
@@ -676,7 +666,7 @@
               </div>
 
               <div class="flex justify-end">
-                <button id="sendbtn" type="submit"
+                <button id="sendBtn" type="submit"
                   class="px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-light dark:bg-primary-dark hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl neon-btn">
                   Send Message
                 </button>

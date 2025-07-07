@@ -79,7 +79,7 @@ function createParticles() {
   particlesContainer.style.zIndex = "-1";
   document.body.appendChild(particlesContainer);
 
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 100; i++) {
     const particle = document.createElement("div");
     particle.classList.add("particle");
 
@@ -94,8 +94,8 @@ function createParticles() {
 
     // Random animation duration and delay
     const duration = Math.random() * 20 + 10;
-    const delay = Math.random() * 5;
-    particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+    const delay = Math.random() * 2;
+    particle.style.animation = i%3 == 1 ? `float-x ${duration}s ease-in-out ${delay}s infinite` : i%3 == 2 ? `float-y ${duration}s ease-in-out ${delay}s infinite` : `float-z ${duration}s ease-in-out ${delay}s infinite`;
 
     particlesContainer.appendChild(particle);
   }
@@ -148,28 +148,29 @@ if (typewriter) {
   });
 }
 
-const sendBtn = document.getElementById("sendBtn");
 const whatsappForm = document.getElementById("whatsappForm");
-sendBtn.addEventListener('submit', e=>{
+whatsappForm.addEventListener('submit', e=>{
   e.preventDefault();
 
   const phoneNumber = "2349086117194";
-  const firstName = whatsappForm.value;
-  const lastName = whatsappForm.value;
-  const email = whatsappForm.value;
-  const subject = whatsappForm.value;
-  const message = whatsappForm.value;
+  const firstName = whatsappForm.firstName.value;
+  const lastName = whatsappForm.lastName.value;
+  const email = whatsappForm.email.value;
+  const subject = whatsappForm.subject.value;
+  const message = whatsappForm.message.value;
 
-  const fullMessage = `New Contact Form Submission:
+  const fullMessage = `
+    New Contact Form Submission:
     Name: ${firstName} ${lastName}
     Email: ${email}
     Subject: ${subject}
     Message: ${message}`;
-
+    
+console.log(fullMessage)
   const encodedMessage = encodeURIComponent(fullMessage);
   window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
 
-  event.target.reset();
+  // e.target.reset();
 
   alert(
     "Thank you! Your message has been sent. You'll be redirected to WhatsApp."

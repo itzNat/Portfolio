@@ -88,7 +88,7 @@
     }
 
     .dark .blob {
-      background: linear-gradient(45deg, #8b5cf6, #ec4899);
+      background: linear-gradient(45deg, #8b5cf6, #ec489a34);
     }
 
     .card-hover {
@@ -332,6 +332,7 @@
       background-image:
         linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+        z-index: -2;
     }
 
     .particle {
@@ -343,7 +344,20 @@
     }
 
     .dark .particle {
-      background: rgba(139, 92, 246, 0.5);
+      background: rgba(139, 92, 246, 0.3);
+    }
+
+    @keyframes float-x {
+      0%, 100% { transform: translateX(0) }
+      50% { transform: translateX(-20px) }
+    }
+    @keyframes float-y {
+      0%, 100% { transform: translateY(0) }
+      50% { transform: translateY(-20px) }
+    }
+    @keyframes float-z {
+      0%, 100% { transform: translate(0, 0) }
+      50% { transform: translate(-20px, -20px) }
     }
 
     .morphing-demo {
