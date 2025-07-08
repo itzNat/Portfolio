@@ -17,7 +17,7 @@
       color: white;
     }
 
-    .dark section,
+    .dark .section,
     .dark footer {
       background-color: #0f172a;
     }
@@ -332,32 +332,43 @@
       background-image:
         linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
-        z-index: -2;
     }
 
     .particle {
       position: absolute;
       border-radius: 50%;
-      background: rgba(99, 102, 241, 0.5);
+      background: rgba(99, 102, 241);
       pointer-events: none;
       z-index: -1;
     }
 
     .dark .particle {
-      background: rgba(139, 92, 246, 0.3);
+      background: rgba(139, 92, 246);
     }
 
     @keyframes float-x {
-      0%, 100% { transform: translateX(0) }
-      50% { transform: translateX(-20px) }
+      0%, 100% { 
+        transform: translateX(0);
+      }
+      50% { 
+        transform: translateX(-20px);
+      }
     }
     @keyframes float-y {
-      0%, 100% { transform: translateY(0) }
-      50% { transform: translateY(-20px) }
+      0%, 100% { 
+        transform: translateY(0);
+      }
+      50% { 
+        transform: translateY(-20px);
+      }
     }
     @keyframes float-z {
-      0%, 100% { transform: translate(0, 0) }
-      50% { transform: translate(-20px, -20px) }
+      0%, 100% { 
+        transform: translate(0, 0);
+      }
+      50% { 
+        transform: translate(-20px, -20px);
+      }
     }
 
     .morphing-demo {

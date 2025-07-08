@@ -84,15 +84,13 @@ function createParticles() {
     particle.classList.add("particle");
 
     // Random size between 2px and 6px
-    const size = Math.random() * 4 + 2;
+    const size = Math.floor(Math.random() * 10 + 2);
     particle.style.width = `${size}px`;
     particle.style.height = `${size}px`;
-
-    // Random position
     particle.style.left = `${Math.random() * 100}%`;
     particle.style.top = `${Math.random() * 100}%`;
+    particle.style.opacity = `${Math.random() * 0.5}`;
 
-    // Random animation duration and delay
     const duration = Math.random() * 20 + 10;
     const delay = Math.random() * 2;
     particle.style.animation = i%3 == 1 ? `float-x ${duration}s ease-in-out ${delay}s infinite` : i%3 == 2 ? `float-y ${duration}s ease-in-out ${delay}s infinite` : `float-z ${duration}s ease-in-out ${delay}s infinite`;
@@ -169,9 +167,7 @@ whatsappForm.addEventListener('submit', e=>{
 console.log(fullMessage)
   const encodedMessage = encodeURIComponent(fullMessage);
   window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
-
-  // e.target.reset();
-
+  e.target.reset();
   alert(
     "Thank you! Your message has been sent. You'll be redirected to WhatsApp."
   );
